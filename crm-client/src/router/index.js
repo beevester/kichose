@@ -44,6 +44,7 @@ import channelRoutes from './channel'
 import textRoutes from './text'
 import historyRoutes from './history'
 import opportunityRoutes from './opportunity'
+import opportunityStatusRoutes from './opportunityStatus';
 
 Vue.use(VueRouter)
 
@@ -77,6 +78,7 @@ const routes = [
       ...taskRoutes,
       ...projectRoutes,
       ...opportunityRoutes,
+      ...opportunityStatusRoutes,
       ...userRoutes,
       ...contactRoutes,
       ...contactTypeRoutes,
