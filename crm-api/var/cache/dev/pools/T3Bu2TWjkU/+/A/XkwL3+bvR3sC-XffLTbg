@@ -1,0 +1,3 @@
+<?php //route_name_170ee74338eef0e1a9f116b249bc2ddd
+
+return [PHP_INT_MAX, 'api_categories_get_item'];

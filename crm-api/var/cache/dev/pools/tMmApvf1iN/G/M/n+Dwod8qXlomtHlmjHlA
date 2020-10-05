@@ -1,0 +1,82 @@
+<?php //subresource_operations_a6342e67937884eb50713f228fee982c
+
+return [PHP_INT_MAX, [
+    'api_products_images_get_subresource' => [
+        'property' => 'images',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Image',
+        'shortNames' => [
+            'Image',
+            'Product',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Product',
+                true,
+            ],
+        ],
+        'operation_name' => 'images_get_subresource',
+        'route_name' => 'api_products_images_get_subresource',
+        'path' => '/products/{id}/images.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+    'api_products_company_products_get_subresource' => [
+        'property' => 'companyProducts',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\CompanyProduct',
+        'shortNames' => [
+            'CompanyProduct',
+            'Product',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Product',
+                true,
+            ],
+        ],
+        'operation_name' => 'company_products_get_subresource',
+        'route_name' => 'api_products_company_products_get_subresource',
+        'path' => '/products/{id}/company_products.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+    'api_products_product_sell_prices_get_subresource' => [
+        'property' => 'productSellPrices',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\ProductSellPrice',
+        'shortNames' => [
+            'ProductSellPrice',
+            'Product',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Product',
+                true,
+            ],
+        ],
+        'operation_name' => 'product_sell_prices_get_subresource',
+        'route_name' => 'api_products_product_sell_prices_get_subresource',
+        'path' => '/products/{id}/product_sell_prices.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

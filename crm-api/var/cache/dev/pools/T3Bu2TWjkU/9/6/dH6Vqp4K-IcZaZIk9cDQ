@@ -1,0 +1,3 @@
+<?php //route_name_f043585d16d2a51c2abeec31d300bc6b
+
+return [PHP_INT_MAX, 'api_tasks_get_collection'];

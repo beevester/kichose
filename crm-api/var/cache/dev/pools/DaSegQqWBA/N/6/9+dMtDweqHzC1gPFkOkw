@@ -1,0 +1,182 @@
+<?php //%255BApp%255CEntity%255CClient%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'client',
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\ClientRepository',
+            ],
+            'message' => [
+                2 => 'User already exists',
+            ],
+            'fields' => [
+                2 => [
+                    'username',
+                ],
+            ],
+            'errorPath' => [
+                2 => 'username',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'client_read_collection',
+                                'read',
+                                'is_active_read',
+                            ],
+                        ],
+                        'access_control' => 'is_granted(\'ROLE_CLIENT_LIST\')',
+                    ],
+                    'post' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT_CREATE\')',
+                    ],
+                    'signup' => [
+                        'method' => 'POST',
+                        'path' => '/frontend/signup',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'signup_collection',
+                            ],
+                        ],
+                        'controller' => 'App\\Controller\\Client\\ClientSignupPostCollectionController',
+                        'defaults' => [
+                            '_api_receive' => true,
+                        ],
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT_SHOW\')',
+                    ],
+                    'put' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT_UPDATE\')',
+                    ],
+                    'delete' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT_DELETE\')',
+                    ],
+                    'clientGet' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT\')',
+                        'method' => 'GET',
+                        'path' => '/frontend/profile/me',
+                        'normalization_context' => [
+                            'groups' => [
+                                'client_get_item',
+                            ],
+                        ],
+                        'controller' => 'App\\Controller\\Client\\ClientGetItemAction',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                    'clientPut' => [
+                        'access_control' => 'is_granted(\'ROLE_CLIENT\')',
+                        'method' => 'PUT',
+                        'path' => '/frontend/profile/me',
+                        'normalization_context' => [
+                            'groups' => [
+                                'client_put_item',
+                            ],
+                        ],
+                        'controller' => 'App\\Controller\\Client\\ClientPutItemController',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                    'loginByToken' => [
+                        'method' => 'GET',
+                        'path' => '/frontend/login/{token}',
+                        'controller' => 'App\\Controller\\Client\\ClientLoginByTokenCollectionAction',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                    'remindPassword' => [
+                        'method' => 'POST',
+                        'path' => '/frontend/remind/password',
+                        'controller' => 'App\\Controller\\Client\\ClientRemindPasswordCollectionController',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'client_read',
+                            'read',
+                            'is_active_read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'client_write',
+                            'is_active_write',
+                        ],
+                    ],
+                    'order' => [
+                        'id' => 'DESC',
+                    ],
+                ],
+            ],
+            'filterClass' => [
+                4 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\DateFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\OrderFilter',
+            ],
+            'properties' => [
+                4 => [
+                    'createdAt',
+                    'updatedAt',
+                ],
+                [
+                    'id' => 'exact',
+                    'name' => 'ipartial',
+                    'labels.id' => 'exact',
+                    'contacts.value' => 'ipartial',
+                    'description' => 'ipartial',
+                ],
+                [
+                    'id',
+                    'name',
+                    'description',
+                    'createdAt',
+                    'updatedAt',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+        $o[5],
+        $o[6],
+    ],
+    []
+); }];

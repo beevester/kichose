@@ -1,0 +1,30 @@
+<?php //subresource_operations_14618812bb1ae7939581480bfcf77517
+
+return [PHP_INT_MAX, [
+    'api_invoice_headers_files_get_subresource' => [
+        'property' => 'files',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\File',
+        'shortNames' => [
+            'File',
+            'InvoiceHeader',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\InvoiceHeader',
+                true,
+            ],
+        ],
+        'operation_name' => 'files_get_subresource',
+        'route_name' => 'api_invoice_headers_files_get_subresource',
+        'path' => '/invoice_headers/{id}/files.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

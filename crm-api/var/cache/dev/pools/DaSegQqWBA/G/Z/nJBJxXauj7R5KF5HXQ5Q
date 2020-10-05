@@ -1,0 +1,69 @@
+<?php //%255BApp%255CEntity%255CInvoiceLine%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'invoice_line',
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\InvoiceLineRepository',
+            ],
+            'collectionOperations' => [
+                2 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_INVOICE_LINE_LIST\')',
+                    ],
+                    'post' => [
+                        'access_control' => 'is_granted(\'ROLE_INVOICE_LINE_CREATE\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                2 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_INVOICE_LINE_SHOW\')',
+                    ],
+                    'put' => [
+                        'access_control' => 'is_granted(\'ROLE_INVOICE_LINE_UPDATE\')',
+                    ],
+                    'delete' => [
+                        'access_control' => 'is_granted(\'ROLE_INVOICE_LINE_DELETE\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                2 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'invoice_line_read',
+                            'read',
+                            'is_active_read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'invoice_line_write',
+                            'is_active_write',
+                        ],
+                    ],
+                    'order' => [
+                        'id' => 'DESC',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

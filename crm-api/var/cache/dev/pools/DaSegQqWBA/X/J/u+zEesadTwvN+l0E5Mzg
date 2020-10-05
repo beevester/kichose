@@ -1,0 +1,61 @@
+<?php //%255BApp%255CEntity%255CText%2524translations%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        clone ($p['Symfony\\Component\\Serializer\\Annotation\\Groups'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Annotation\\Groups')),
+        clone ($p['Doctrine\\ORM\\Mapping\\OrderBy'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OrderBy')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Valid'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Valid')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Count'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Count')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'mappedBy' => [
+                'translatable',
+            ],
+            'targetEntity' => [
+                'App\\Entity\\TextTranslation',
+            ],
+            'cascade' => [
+                [
+                    'persist',
+                ],
+            ],
+            'orphanRemoval' => [
+                true,
+            ],
+            'value' => [
+                2 => [
+                    'id' => 'ASC',
+                ],
+            ],
+            'min' => [
+                4 => 1,
+            ],
+            'groups' => [
+                4 => [
+                    'Default',
+                ],
+            ],
+        ],
+        'Symfony\\Component\\Serializer\\Annotation\\Groups' => [
+            'groups' => [
+                1 => [
+                    'text_read',
+                    'text_write',
+                    'text_read_collection',
+                    'text_read_frontend',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+    ],
+    []
+); }];

@@ -1,0 +1,3 @@
+<?php //route_name_8ac0ae91c72483330ee03a23170c6f9c
+
+return [PHP_INT_MAX, 'api_deal_types_get_item'];

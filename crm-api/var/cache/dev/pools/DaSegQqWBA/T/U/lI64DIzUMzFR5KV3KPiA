@@ -1,0 +1,72 @@
+<?php //%255BApp%255CEntity%255CImage%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                1 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_IMAGE_LIST\')',
+                    ],
+                    'post' => [
+                        'access_control' => 'is_granted(\'ROLE_IMAGE_CREATE\')',
+                        'method' => 'POST',
+                        'path' => '/images',
+                        'controller' => 'App\\Controller\\CreateImageAction',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'iri' => [
+                1 => 'http://schema.org/MediaObject',
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_IMAGE_SHOW\')',
+                    ],
+                    'put' => [
+                        'access_control' => 'is_granted(\'ROLE_IMAGE_UPDATE\')',
+                    ],
+                    'delete' => [
+                        'access_control' => 'is_granted(\'ROLE_IMAGE_DELETE\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'image_read',
+                            'read',
+                            'is_active_read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'image_write',
+                            'is_active_write',
+                        ],
+                    ],
+                    'order' => [
+                        'id' => 'DESC',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

@@ -1,0 +1,3 @@
+<?php //route_name_cffdf2b61f6df3dec21c2b5fbd576e26
+
+return [PHP_INT_MAX, 'api_labels_get_item'];

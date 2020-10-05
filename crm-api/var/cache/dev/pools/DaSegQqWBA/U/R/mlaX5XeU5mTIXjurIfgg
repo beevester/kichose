@@ -1,0 +1,119 @@
+<?php //%255BApp%255CEntity%255CDivision%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'division',
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\DivisionRepository',
+            ],
+            'collectionOperations' => [
+                2 => [
+                    'get' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'division_read_collection',
+                                'read',
+                                'is_active_read',
+                            ],
+                        ],
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_LIST\')',
+                    ],
+                    'last' => [
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_UPDATE\')',
+                        'method' => 'GET',
+                        'path' => '/divisions/last',
+                        'controller' => 'App\\Controller\\CompanyLastAction',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                    'post' => [
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_CREATE\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                2 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_SHOW\')',
+                    ],
+                    'put' => [
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_UPDATE\')',
+                    ],
+                    'delete' => [
+                        'access_control' => 'is_granted(\'ROLE_DIVISION_DELETE\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                2 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'division_read',
+                            'read',
+                            'is_active_read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'division_write',
+                            'is_active_write',
+                        ],
+                    ],
+                    'order' => [
+                        'id' => 'DESC',
+                    ],
+                ],
+            ],
+            'filterClass' => [
+                3 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\DateFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\OrderFilter',
+            ],
+            'properties' => [
+                3 => [
+                    'createdAt',
+                    'updatedAt',
+                ],
+                [
+                    'id' => 'exact',
+                    'name' => 'ipartial',
+                    'contacts.value' => 'ipartial',
+                    'labels.id' => 'exact',
+                    'addresses.country.name' => 'ipartial',
+                    'addresses.city.name' => 'ipartial',
+                    'addresses.postCode' => 'ipartial',
+                    'contactPerson' => 'ipartial',
+                ],
+                [
+                    'id',
+                    'name',
+                    'contactPerson',
+                    'createdAt',
+                    'updatedAt',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+        $o[5],
+    ],
+    []
+); }];

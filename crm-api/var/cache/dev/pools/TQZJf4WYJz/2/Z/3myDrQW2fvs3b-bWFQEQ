@@ -1,0 +1,123 @@
+<?php //%255BApp%255CEntity%255CUser%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                '`user`',
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\UserRepository',
+            ],
+            'fields' => [
+                2 => [
+                    'username',
+                ],
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_USER_LIST\')',
+                    ],
+                    'post' => [
+                        'controller' => 'App\\Controller\\User\\UserPostCollectionController',
+                        'access_control' => 'is_granted(\'ROLE_USER_CREATE\')',
+                    ],
+                    'dashboard' => [
+                        'access_control' => 'is_granted(\'ROLE_USER_DASHBOARD\')',
+                        'method' => 'GET',
+                        'path' => '/users/dashboard',
+                        'controller' => 'App\\Controller\\DashboardAction',
+                        'defaults' => [
+                            '_api_receive' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_USER_SHOW\')',
+                    ],
+                    'put' => [
+                        'controller' => 'App\\Controller\\User\\UserPutItemController',
+                        'access_control' => 'is_granted(\'ROLE_USER_UPDATE\')',
+                    ],
+                    'delete' => [
+                        'access_control' => 'is_granted(\'ROLE_USER_DELETE\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'user_read',
+                            'read',
+                            'is_active_read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'user_write',
+                            'is_active_write',
+                        ],
+                    ],
+                    'order' => [
+                        'id' => 'DESC',
+                    ],
+                ],
+            ],
+            'filterClass' => [
+                4 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\DateFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\OrderFilter',
+            ],
+            'properties' => [
+                4 => [
+                    'createdAt',
+                    'updatedAt',
+                ],
+                [
+                    'id' => 'exact',
+                    'name' => 'ipartial',
+                    'email' => 'ipartial',
+                    'groups.name' => 'ipartial',
+                ],
+                [
+                    'id',
+                    'name',
+                    'email',
+                    'groups.name',
+                    'createdAt',
+                    'updatedAt',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+        $o[5],
+        $o[6],
+    ],
+    []
+); }];

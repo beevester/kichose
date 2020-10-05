@@ -1,0 +1,3 @@
+<?php //route_name_2cf0a83155b105361598081493e0adf7
+
+return [PHP_INT_MAX, 'api_opportunity_statuses_get_collection'];

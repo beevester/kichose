@@ -1,0 +1,3 @@
+<?php //%255BGesdinet%255CJWTRefreshTokenBundle%255CModel%255CRefreshTokenInterface%2523getRefreshToken%255D%255B1%255D
+
+return [PHP_INT_MAX, []];

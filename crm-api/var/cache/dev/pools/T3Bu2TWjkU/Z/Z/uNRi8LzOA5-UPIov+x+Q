@@ -1,0 +1,3 @@
+<?php //route_name_84010b99ba49cb2fed8d86fa6f4c5395
+
+return [PHP_INT_MAX, 'api_opportunities_get_item'];
