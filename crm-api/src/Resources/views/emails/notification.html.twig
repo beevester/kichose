@@ -1,0 +1,10 @@
+{% extends 'emails/layout.html.twig' %}
+
+{% block body %}
+    <p>Hi {{ opportunity.assignedTo.name }},</p>
+    <br>
+    <p>An opportunity {{ opportunity.name }} notification.</p>
+    <p>To confirm your email follow the link</p>
+
+    <p>Thanks!</p>
+{% endblock %}

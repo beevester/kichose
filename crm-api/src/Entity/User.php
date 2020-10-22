@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Controller\User\UserPutItemController;
@@ -98,7 +99,9 @@ class User implements \Serializable, UserInterface
      *     "task_read",
      *     "client_read",
      *     "project_read",
-     *     "task_write"
+     *     "task_write",
+     *     "opportunity_write",
+     *     "opportunity_read",
      * })
      */
     private $id;
@@ -144,7 +147,8 @@ class User implements \Serializable, UserInterface
      *     "user_write",
      *     "task_read",
      *     "client_read",
-     *     "project_read"
+     *     "project_read",
+     *     "opportunity_read"
      * })
      * @Assert\NotBlank()
      */
@@ -158,7 +162,8 @@ class User implements \Serializable, UserInterface
      *     "user_read",
      *     "user_write",
      *     "task_read",
-     *     "client_read"
+     *     "client_read",
+     *     "opportunity_read"
      * })
      * @Assert\NotBlank()
      */
@@ -172,6 +177,21 @@ class User implements \Serializable, UserInterface
      * @ORM\OrderBy({"id" = "DESC"})
      */
     private $tasks;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Opportunity", mappedBy="assignedTo", cascade={"persist"}, orphanRemoval=true)
+     * @Groups({
+     *     "document_read",
+     *     "client_read",
+     *     "client_write",
+     *     "opportunity_read",
+     *     "opportunity_write"
+     * })
+     * @ORM\OrderBy({"id" = "ASC"})
+     * @ApiSubresource()
+     * @Assert\Valid()
+     */
+    private $opportunities;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Group")

@@ -115,3 +115,7 @@ services:
         credentials:
           key: '%env(AWS_S3_ACCESS_ID)%'
           secret: '%env(AWS_S3_ACCESS_SECRET)%'
+
+#  App\EventListener\OpportunitySubscriber:
+#    tags:
+#      - { name: 'doctrine.event_subscriber' }

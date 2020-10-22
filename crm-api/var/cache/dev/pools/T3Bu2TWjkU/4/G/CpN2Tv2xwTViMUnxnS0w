@@ -1,3 +1,0 @@
-<?php //route_name_dffcc041293224dcd099f796a8d0aebe
-
-return [PHP_INT_MAX, 'api_histories_get_collection'];

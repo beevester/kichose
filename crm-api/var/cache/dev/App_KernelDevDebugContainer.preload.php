@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerOCQVqZ2/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerLFKCeFV/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -29,6 +29,7 @@ $classes[] = 'Gesdinet\JWTRefreshTokenBundle\GesdinetJWTRefreshTokenBundle';
 $classes[] = 'Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle';
 $classes[] = 'Oneup\FlysystemBundle\OneupFlysystemBundle';
 $classes[] = 'Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle';
+$classes[] = 'Twig\Extra\TwigExtraBundle\TwigExtraBundle';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\Category\CategoryFrontendGetCollectionAction';
@@ -44,6 +45,7 @@ $classes[] = 'App\Controller\CreateImageAction';
 $classes[] = 'App\Controller\DashboardAction';
 $classes[] = 'App\Controller\DownloadFileAction';
 $classes[] = 'App\Controller\History\HistoryGetEntityCollectionAction';
+$classes[] = 'App\Controller\Opportunity\OpportunityNotification';
 $classes[] = 'App\Controller\Product\ProductFrontendGetItemAction';
 $classes[] = 'App\Controller\SearchAction';
 $classes[] = 'App\Controller\TaskDeadlineAction';
@@ -558,7 +560,7 @@ $classes[] = 'Liip\ImagineBundle\Imagine\Filter\PostProcessor\PngquantPostProces
 $classes[] = 'Liip\ImagineBundle\Imagine\Filter\PostProcessor\MozJpegPostProcessor';
 $classes[] = 'Liip\ImagineBundle\Form\Type\ImageType';
 $classes[] = 'Imagine\Gd\Imagine';
-$classes[] = 'Imagine\Image\Metadata\DefaultMetadataReader';
+$classes[] = 'Imagine\Image\Metadata\ExifMetadataReader';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
 $classes[] = 'Symfony\Bundle\MakerBundle\Command\MakerCommand';
@@ -805,8 +807,11 @@ $classes[] = 'JMS\Serializer\Twig\SerializerRuntimeExtension';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension';
 $classes[] = 'Symfony\Component\VarDumper\Dumper\HtmlDumper';
 $classes[] = 'Liip\ImagineBundle\Templating\FilterExtension';
+$classes[] = 'Twig\Extra\CssInliner\CssInlinerExtension';
+$classes[] = 'Twig\Extra\Inky\InkyExtension';
 $classes[] = 'Symfony\Bridge\Twig\AppVariable';
 $classes[] = 'Twig\RuntimeLoader\ContainerRuntimeLoader';
+$classes[] = 'Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor';
 $classes[] = 'Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator';
 $classes[] = 'Symfony\Bridge\Twig\Command\DebugCommand';
 $classes[] = 'Symfony\Bundle\TwigBundle\Command\LintCommand';

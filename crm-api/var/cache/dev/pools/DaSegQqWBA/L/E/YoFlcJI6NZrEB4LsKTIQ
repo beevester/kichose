@@ -26,6 +26,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'groups' => [
                 2 => [
                     'company_write',
+                    'company_read',
                     'opportunity_read',
                     'opportunity_write',
                 ],

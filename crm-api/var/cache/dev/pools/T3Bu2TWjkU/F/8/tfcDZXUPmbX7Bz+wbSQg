@@ -1,3 +1,0 @@
-<?php //route_name_baeab1511cf0dcf6e7e05c0348994b29
-
-return [PHP_INT_MAX, 'api_category_translations_get_item'];

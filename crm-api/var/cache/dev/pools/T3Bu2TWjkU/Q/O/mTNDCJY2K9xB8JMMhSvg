@@ -1,3 +1,0 @@
-<?php //route_name_f589053f2d8b37681d35b3ff808647f9
-
-return [PHP_INT_MAX, 'api_documents_get_item'];

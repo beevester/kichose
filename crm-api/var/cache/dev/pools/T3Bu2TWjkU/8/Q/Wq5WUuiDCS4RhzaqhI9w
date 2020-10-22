@@ -1,3 +1,0 @@
-<?php //route_name_afd28d28d8a6145da30f2cb28ea3e656
-
-return [PHP_INT_MAX, 'api_projects_get_collection'];

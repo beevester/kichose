@@ -26,6 +26,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'task_read',
                     'client_read',
                     'project_read',
+                    'opportunity_read',
                 ],
             ],
         ],

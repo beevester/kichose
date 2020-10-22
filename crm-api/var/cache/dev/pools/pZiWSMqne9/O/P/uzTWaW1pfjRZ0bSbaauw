@@ -10,7 +10,6 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'properties' => [
                 [
                     'id',
-                    'description',
                     'client',
                     'status',
                     'tasks',
@@ -18,12 +17,14 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'type',
                     'searchText',
                     'opportunity',
+                    'description',
                     'probability',
                     'priority',
                     'salesStage',
                     'closeDate',
                     'dealValue',
                     'company',
+                    'assignedTo',
                     'createdAt',
                     'updatedAt',
                     'createdBy',

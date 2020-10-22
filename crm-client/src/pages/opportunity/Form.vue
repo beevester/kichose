@@ -72,6 +72,14 @@
           <form-select-autocomplete
             :item="item"
             :errors="errors"
+            property="assignedTo"
+            option-store="user"
+            label="Assigned To"
+            @formUpdated="updateValue"
+          />
+          <form-select-autocomplete
+            :item="item"
+            :errors="errors"
             property="company"
             option-store="company"
             label="company_name"

@@ -43,7 +43,7 @@ export default {
         'id',
         'opportunity',
         'division',
-        'company',
+        'company.full_name',
         'client',
         'priority',
         'status.id',
@@ -51,7 +51,7 @@ export default {
         'dealValue',
         'successProbability',
         'dealType',
-        'closeDate'
+        'closeDate',
       ],
       filterable: [
         'id',
@@ -60,7 +60,7 @@ export default {
         'division',
         'isActive',
         'columnCreatedAt',
-        'columnUpdatedAt'
+        'columnUpdatedAt',
       ],
       customFilters: ['status.id', 'type.id'],
       sortable: [
@@ -71,16 +71,16 @@ export default {
         'type.id',
         'isActive',
         'columnCreatedAt',
-        'columnUpdatedAt'
+        'columnUpdatedAt',
       ],
       templates: {
         columnCreatedAt,
         columnUpdatedAt,
         'status.id': columnStatus,
         'type.id': columnType,
-        isActive: columnIsActive
-      }
+        isActive: columnIsActive,
+      },
     }
-  }
+  },
 }
 </script>

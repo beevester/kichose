@@ -3,21 +3,21 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Interfaces\ClientInterface;
 use App\Interfaces\SearchInterface;
+use App\Traits\Blameable;
+use App\Traits\IsActive;
+use App\Traits\Timestampable;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Traits\Blameable;
-use App\Traits\IsActive;
-use App\Traits\Timestampable;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
 use Symfony\Component\Validator\Constraints as Assert;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 
 /**
  * Opportunity
@@ -82,7 +82,7 @@ class Opportunity implements ClientInterface, SearchInterface
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Groups({"opportunity_read", "user_read", "document_read", "document_write", "task_read", "task_write", "client_read", "client_write"})
+     * @Groups({"opportunity_read", "user_read", "document_read", "document_write", "task_read", "task_write", "client_read", "client_write", "user_read", "user_write"})
      */
     private $id;
 
@@ -141,6 +141,13 @@ class Opportunity implements ClientInterface, SearchInterface
     private $client;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="opportunities")
+     * @Groups({"opportunity_read", "opportunity_write", "task_read"})
+     * @Assert\NotBlank()
+     */
+    private $assignedTo;
+
+    /**
      * @var DateTime
      *
      * @ORM\Column(type="datetime", length=60, nullable=true)
@@ -195,25 +202,13 @@ class Opportunity implements ClientInterface, SearchInterface
      */
     public function __construct()
     {
-        $this->tasks = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tasks = new ArrayCollection();
+        $this->documents = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
     }
 
     public function getClient(): ?Client
@@ -345,6 +340,18 @@ class Opportunity implements ClientInterface, SearchInterface
         $this->opportunity = $opportunity;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     /**
      * @return int
      */
@@ -440,4 +447,21 @@ class Opportunity implements ClientInterface, SearchInterface
     {
         $this->company = $company;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAssignedTo()
+    {
+        return $this->assignedTo;
+    }
+
+    /**
+     * @param mixed $assignedTo
+     */
+    public function setAssignedTo($assignedTo): void
+    {
+        $this->assignedTo = $assignedTo;
+    }
+
 }

@@ -155,6 +155,7 @@ class Company implements SearchInterface
      * @Groups({
      *     "company_read",
      *     "company_write",
+     *     "opporunity_read",
      * })
      */
     private $fullName;
@@ -274,6 +275,7 @@ class Company implements SearchInterface
      * @ORM\OrderBy({"id" = "DESC"})
      * @Groups({
      *     "company_write",
+     *     "company_read",
      *     "opportunity_read",
      *     "opportunity_write",
      * })
