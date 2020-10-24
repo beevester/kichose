@@ -143,6 +143,8 @@ class Company implements SearchInterface
      *     "division_write",
      *     "opportunity.id",
      *     "opportunity.name",
+     *     "opportunity_read",
+     *     "opportunity_write",
      * })
      * @Assert\NotBlank()
      */
@@ -155,7 +157,8 @@ class Company implements SearchInterface
      * @Groups({
      *     "company_read",
      *     "company_write",
-     *     "opporunity_read",
+     *     "opportunity_read",
+     *     "opportunity_write",
      * })
      */
     private $fullName;
@@ -279,14 +282,19 @@ class Company implements SearchInterface
      *     "opportunity_read",
      *     "opportunity_write",
      * })
-     * @ApiSubresource()
+     * @ApiSubresource(maxDepth=3)
      */
     private $opportunities;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Division", inversedBy="companies")
-     * @Groups({"opportunity_read", "opportunity_write", "task_read"})
+     * @Groups({
+     *     "company_read",
+     *     "campany_write",
+     *     "division_read"
+     * })
      * @Assert\NotBlank()
+     * @ApiSubresource(maxDepth=3)
      */
     private $division;
 

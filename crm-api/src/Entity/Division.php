@@ -125,7 +125,9 @@ class Division implements SearchInterface
      *     "invoice_header_read_collection",
      *     "division_product_read",
      *     "product_sell_price_read",
-     *     "division_read_collection"
+     *     "division_read_collection",
+     *     "opportunity_read",
+     *     "company_read",
      * })
      * @Assert\NotBlank()
      */
@@ -135,7 +137,7 @@ class Division implements SearchInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Company", mappedBy="division")
      * @ORM\OrderBy({"id" = "DESC"})
      * @Groups({
-     *     "company_write"
+     *     "company_read"
      * })
      * @ApiSubresource()
      */

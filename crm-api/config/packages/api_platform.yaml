@@ -15,6 +15,11 @@ api_platform:
             client_items_per_page: true
             client_enabled: true
 
+    eager_loading:
+        enabled: true
+        max_joins: 100
+        fetch_partial: false
+
     exception_to_status:
         # The 4 following handlers are registered by default, keep those lines to prevent unexpected side effects
         Symfony\Component\Serializer\Exception\ExceptionInterface: 400 # Use a raw status code (recommended)

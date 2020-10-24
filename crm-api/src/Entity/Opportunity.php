@@ -128,6 +128,8 @@ class Opportunity implements ClientInterface, SearchInterface
     private $description;
 
     /***
+     * @var float
+     *
      * @ORM\Column(type="float", nullable=false)
      * @Groups({"opportunity_read", "opportunity_write", "document_read"})
      */

@@ -3,6 +3,9 @@ framework:
     #default_locale: en
     #csrf_protection: ~
     #http_method_override: true
+    trusted_hosts:
+        - lulicorp
+        - 102.22.82.10
 
     # Enables session support. Note that the session will ONLY be started if you read or write from it.
     # Remove or comment this section to explicitly disable session support.

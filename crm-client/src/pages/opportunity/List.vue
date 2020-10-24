@@ -42,16 +42,16 @@ export default {
       columns: [
         'id',
         'opportunity',
-        'division',
-        'company.full_name',
-        'client',
+        'company.name',
+        'client.name',
         'priority',
         'status.id',
         'salesStage',
         'dealValue',
-        'successProbability',
+        'probability',
         'dealType',
         'closeDate',
+        'actions'
       ],
       filterable: [
         'id',

@@ -34,7 +34,7 @@
           <form-number
             :item="item"
             :errors="errors"
-            type="string"
+            type="number"
             property="dealValue"
             label="Deal Value"
             @formUpdated="updateValue"

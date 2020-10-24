@@ -183,9 +183,7 @@ class User implements \Serializable, UserInterface
      * @Groups({
      *     "document_read",
      *     "client_read",
-     *     "client_write",
-     *     "opportunity_read",
-     *     "opportunity_write"
+     *     "client_write"
      * })
      * @ORM\OrderBy({"id" = "ASC"})
      * @ApiSubresource()

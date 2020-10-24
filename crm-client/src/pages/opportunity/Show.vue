@@ -25,10 +25,6 @@ export default {
           path: 'type.name'
         },
         {
-          property: 'status',
-          path: 'status.name'
-        },
-        {
           property: 'client',
           path: 'client.name',
           link: {
